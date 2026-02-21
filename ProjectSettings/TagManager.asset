@@ -6,6 +6,8 @@ TagManager:
   tags:
   - trap
   - object
+  - lever
+  - interractibleObject
   layers:
   - Default
   - TransparentFX

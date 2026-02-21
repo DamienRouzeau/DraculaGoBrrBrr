@@ -87,6 +87,10 @@ public class PlayerController : MonoBehaviour
     private Vector2 defaultSize;
     private Vector2 defaultOffset;
 
+    // MISCELLANEOUS
+    private InterractibleObject interractibleObject;
+
+
     #region Unity lifecycle
 
     private void Awake()
@@ -121,6 +125,8 @@ public class PlayerController : MonoBehaviour
 
         inputActions.Player.Crouch.performed += ctx => crouchHeld = true;
         inputActions.Player.Crouch.canceled += ctx => OnCrouchReleased();
+
+        inputActions.Player.Interact.performed += ctx => Interract();
 
     }
 
@@ -456,6 +462,18 @@ public class PlayerController : MonoBehaviour
             ObjectBehaviour _obj = collision.gameObject.GetComponent<ObjectBehaviour>();
             _obj.Collect(); 
         }
+        if (collision.CompareTag("interractibleObject"))
+        {
+            interractibleObject = collision.gameObject.GetComponent<InterractibleObject>();
+        }
+    }
+
+    private void OnTriggerExit2D(Collider2D collision)
+    {
+        if (collision.CompareTag("interractibleObject"))
+        {
+            interractibleObject = null;
+        }
     }
     #endregion
 
@@ -463,6 +481,13 @@ public class PlayerController : MonoBehaviour
     private void Rewind()
     {
         transform.position = respawnPoint.position;
+    }
+    #endregion
+
+    #region Interract
+    private void Interract()
+    {
+        interractibleObject?.LeverTrigger();
     }
     #endregion
 
