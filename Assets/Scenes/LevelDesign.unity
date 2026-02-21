@@ -393,6 +393,7 @@ MonoBehaviour:
   groundLayer:
     serializedVersion: 2
     m_Bits: 64
+  respawnPoint: {fileID: 0}
 --- !u!212 &950079274
 SpriteRenderer:
   serializedVersion: 2
@@ -673,7 +674,10 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
-    m_RemovedGameObjects: []
+    m_RemovedGameObjects:
+    - {fileID: 7028415436796921834, guid: 6b5a83a6385c9d54583a589672676655, type: 3}
+    - {fileID: 8645825103650758036, guid: 6b5a83a6385c9d54583a589672676655, type: 3}
+    - {fileID: 395060631119006460, guid: 6b5a83a6385c9d54583a589672676655, type: 3}
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6b5a83a6385c9d54583a589672676655, type: 3}

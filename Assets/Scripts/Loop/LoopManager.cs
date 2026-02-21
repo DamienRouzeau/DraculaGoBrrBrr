@@ -30,7 +30,7 @@ public class LoopManager : MonoBehaviour
         else Instance = this;
     }
 
-    private void OnEnable()
+    private void Start()
     {
         timeAvailable = maxTime;
         UpdateTimerUI();

@@ -42,6 +42,7 @@ public class PlayerController : MonoBehaviour
 
     [Header("Rewind")]
     [SerializeField] private Transform respawnPoint;
+    [SerializeField] private GameObject deadBody;
 
     //  COMPONENTS 
 
@@ -92,6 +93,11 @@ public class PlayerController : MonoBehaviour
         inputActions = new PlayerInputActions();
     }
 
+    private void Start()
+    {
+        GameManager.instance.SubscribeRewind(Rewind);
+    }
+
     private void OnEnable()
     {
         inputActions.Enable();
@@ -107,7 +113,6 @@ public class PlayerController : MonoBehaviour
         inputActions.Player.Crouch.performed += ctx => crouchHeld = true;
         inputActions.Player.Crouch.canceled += ctx => OnCrouchReleased();
 
-        GameManager.instance.SubscribeRewind(Rewind);
     }
 
     private void OnDisable() => inputActions.Disable();
@@ -408,6 +413,7 @@ public class PlayerController : MonoBehaviour
     {
         if(collision.collider.CompareTag("trap"))
         {
+            GameObject _deadBody = Instantiate(deadBody, transform.position, deadBody.transform.rotation);
             GameManager.instance.Rewind();
         }
     }
