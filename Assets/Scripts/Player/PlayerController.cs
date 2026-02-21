@@ -40,6 +40,9 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private float groundCheckRadius = 0.15f;
     [SerializeField] private LayerMask groundLayer;
 
+    [Header("Rewind")]
+    [SerializeField] private Transform respawnPoint;
+
     //  COMPONENTS 
 
     private Rigidbody2D rb;
@@ -103,6 +106,8 @@ public class PlayerController : MonoBehaviour
 
         inputActions.Player.Crouch.performed += ctx => crouchHeld = true;
         inputActions.Player.Crouch.canceled += ctx => OnCrouchReleased();
+
+        GameManager.instance.SubscribeRewind(Rewind);
     }
 
     private void OnDisable() => inputActions.Disable();
@@ -396,6 +401,23 @@ public class PlayerController : MonoBehaviour
             rb.linearVelocity = new Vector2(Mathf.Sign(vx) * maxHorizontalSpeed, rb.linearVelocity.y);
     }
 
+    #endregion
+
+    #region Death
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        if(collision.collider.CompareTag("trap"))
+        {
+            GameManager.instance.Rewind();
+        }
+    }
+    #endregion
+
+    #region Rewind
+    private void Rewind()
+    {
+        transform.position = respawnPoint.position;
+    }
     #endregion
 
     #region Debug
