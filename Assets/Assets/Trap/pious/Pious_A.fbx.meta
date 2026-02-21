@@ -3,7 +3,12 @@ guid: 4221ca09c62d6ba4e8d3128e724700c0
 ModelImporter:
   serializedVersion: 24200
   internalIDToNameTable: []
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Pious
+    second: {fileID: 2100000, guid: 90aacc1fdf0641f4db60a3ce189264f0, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0

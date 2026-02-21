@@ -9,11 +9,6 @@ ModelImporter:
       assembly: UnityEngine.CoreModule
       name: DoorCoffin
     second: {fileID: 2100000, guid: 32cfe0efd9d082f43adb379cc08f5821, type: 2}
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: aiStandardSurface9
-    second: {fileID: 2100000, guid: b0450e84d9a05cf479c9e63d257a5cd9, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0
