@@ -24,6 +24,10 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private float dashAddedSpeed = 12f;
     [SerializeField] private float dashDuration = 0.18f;
     [SerializeField] private float dashCooldown = 0.6f;
+    [SerializeField] private float dashInvincibilityDurations = 0.12f;
+    [SerializeField] private ParticleSystem dashParticles;
+    [SerializeField] private float invincibilityOpacity = 0.1f;
+
 
     [Header("Slide")]
     [SerializeField] private float slideAddedSpeed = 8f;
@@ -48,6 +52,7 @@ public class PlayerController : MonoBehaviour
 
     private Rigidbody2D rb;
     private CapsuleCollider2D col;
+    private SpriteRenderer sprite;
 
     //  INPUT 
 
@@ -68,6 +73,7 @@ public class PlayerController : MonoBehaviour
     private float dashCooldownTimer;
     private float dashTimer;
     private float slideTimer;
+    private float invincibilityTimer;
 
     private bool isDashing;
     private bool isSliding;
@@ -76,6 +82,7 @@ public class PlayerController : MonoBehaviour
     private bool slideEndedNaturally;
 
     private float dashDirection;
+    private bool isInvincible;
 
     private Vector2 defaultSize;
     private Vector2 defaultOffset;
@@ -86,6 +93,7 @@ public class PlayerController : MonoBehaviour
     {
         rb = GetComponent<Rigidbody2D>();
         col = GetComponent<CapsuleCollider2D>();
+        sprite = GetComponent<SpriteRenderer>();
 
         defaultSize = col.size;
         defaultOffset = col.offset;
@@ -96,11 +104,12 @@ public class PlayerController : MonoBehaviour
     private void Start()
     {
         GameManager.instance.SubscribeRewind(Rewind);
+        inputActions?.Enable();
     }
 
     private void OnEnable()
     {
-        inputActions.Enable();
+        inputActions?.Enable();
 
         inputActions.Player.Move.performed += ctx => moveInput = ctx.ReadValue<Vector2>();
         inputActions.Player.Move.canceled += ctx => moveInput = Vector2.zero;
@@ -146,6 +155,18 @@ public class PlayerController : MonoBehaviour
         if (coyoteTimer > 0) coyoteTimer -= dt;
         if (jumpBufferTimer > 0) jumpBufferTimer -= dt;
         if (dashCooldownTimer > 0) dashCooldownTimer -= dt;
+        if (invincibilityTimer > 0)
+        {
+            invincibilityTimer -= dt;
+        }
+        else
+        {
+            isInvincible = false;
+            sprite.color = new Color(sprite.color.r, sprite.color.g, sprite.color.b, 1);
+            dashParticles.Stop();
+
+        }
+
 
         if (isDashing)
         {
@@ -334,11 +355,17 @@ public class PlayerController : MonoBehaviour
         float newVx = rb.linearVelocity.x + dashDirection * dashAddedSpeed;
 
         isDashing = true;
+        isInvincible = true;
+        invincibilityTimer = dashInvincibilityDurations;
+
         dashTimer = dashDuration;
         dashCooldownTimer = dashCooldown;
 
         rb.gravityScale = 0f;
         rb.linearVelocity = new Vector2(newVx, 0f);
+        dashParticles.Play();
+        sprite.color = new Color(sprite.color.r, sprite.color.g, sprite.color.b, invincibilityOpacity);
+
     }
 
     private void EndDash()
@@ -411,7 +438,15 @@ public class PlayerController : MonoBehaviour
     #region Death
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        if(collision.collider.CompareTag("trap"))
+        if(collision.collider.CompareTag("trap") && !isInvincible)
+        {
+            GameObject _deadBody = Instantiate(deadBody, transform.position, deadBody.transform.rotation);
+            GameManager.instance.Rewind();
+        }
+    }
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.CompareTag("trap") && !isInvincible)
         {
             GameObject _deadBody = Instantiate(deadBody, transform.position, deadBody.transform.rotation);
             GameManager.instance.Rewind();

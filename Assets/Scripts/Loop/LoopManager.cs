@@ -43,6 +43,10 @@ public class LoopManager : MonoBehaviour
     private void FixedUpdate()
     {
         inGameTimer -= Time.fixedDeltaTime;
+        if (inGameTimer <= 0)
+        {
+            GameManager.instance.Rewind();
+        }
         UpdateTimerUI();
     }
     #endregion
