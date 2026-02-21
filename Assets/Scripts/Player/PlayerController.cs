@@ -435,7 +435,7 @@ public class PlayerController : MonoBehaviour
 
     #endregion
 
-    #region Death
+    #region Collision
     private void OnCollisionEnter2D(Collision2D collision)
     {
         if(collision.collider.CompareTag("trap") && !isInvincible)
@@ -450,6 +450,11 @@ public class PlayerController : MonoBehaviour
         {
             GameObject _deadBody = Instantiate(deadBody, transform.position, deadBody.transform.rotation);
             GameManager.instance.Rewind();
+        }
+        if (collision.CompareTag("object"))
+        {
+            ObjectBehaviour _obj = collision.gameObject.GetComponent<ObjectBehaviour>();
+            _obj.Collect(); 
         }
     }
     #endregion
