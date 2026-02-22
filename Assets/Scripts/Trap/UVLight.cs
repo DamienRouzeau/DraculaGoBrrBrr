@@ -25,6 +25,7 @@ public class UVLight : MonoBehaviour
     {
         isOn = !isOn;
         anim.SetBool("TurnOn", isOn);
+        AudioManager.instance.PlayAudio(transform, "Light", 0.2f, Random.Range(0.9f, 1.1f));
         timer = onDuration;
     }
 }
