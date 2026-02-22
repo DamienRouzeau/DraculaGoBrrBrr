@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: TutoFinal
   m_EditorClassIdentifier: Assembly-CSharp::DialogData
   text:
-  - Pour finir je peux combiner mes pouvoir pour cumuler la vitesse
+  - Pour finir je peux combiner mes pouvoir pour cumuler de la vitesse
   - Je devrais essayer de slider puis sauter avant de dasher
   - Donc 'O' puis 'Espace' et enfin 'P'
   time: 5
