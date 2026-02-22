@@ -3,7 +3,27 @@ guid: d3e55791684a20e4ab86d1310bc13ddb
 ModelImporter:
   serializedVersion: 24200
   internalIDToNameTable: []
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Axe_Steel
+    second: {fileID: 2100000, guid: a561f02c21356554aad4b1e473b8e31e, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Caoutchou_Levier
+    second: {fileID: 2100000, guid: 82c14133530df58498d5713b6bd6ae87, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Metal_Levier
+    second: {fileID: 2100000, guid: ee8a93a1e4bee3640a57e4094a4c3767, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: openPBR_shader1
+    second: {fileID: 2100000, guid: a561f02c21356554aad4b1e473b8e31e, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0

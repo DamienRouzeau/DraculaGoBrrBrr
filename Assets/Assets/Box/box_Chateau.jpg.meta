@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: d9b4aebb6600ca74081ac7d3ffd31445
+guid: 54b964131ce8ffa4090a330248823bd7
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -1544841538656810162
-    second: 576_0
+      213: -7414640403528597671
+    second: box-clair_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -100,13 +100,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: 576_0
+      name: box-clair_0
       rect:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 1200
-        height: 1200
+        width: 1920
+        height: 1920
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -115,8 +115,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: e4bc7163ece9f8ae0800000000000000
-      internalID: -1544841538656810162
+      spriteID: 95f3b6266d7e91990800000000000000
+      internalID: -7414640403528597671
       vertices: []
       indices: 
       edges: []
@@ -135,7 +135,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      576_0: -1544841538656810162
+      box-clair_0: -7414640403528597671
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
