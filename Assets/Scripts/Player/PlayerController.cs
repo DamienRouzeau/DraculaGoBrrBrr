@@ -497,6 +497,11 @@ public class PlayerController : MonoBehaviour
         {
             interractibleObject = collision.gameObject.GetComponent<InterractibleObject>();
         }
+
+        if(collision.CompareTag("TPTrigger"))
+        {
+            GameManager.instance.StartTP();
+        }
     }
 
     private void OnTriggerExit2D(Collider2D collision)

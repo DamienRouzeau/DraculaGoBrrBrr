@@ -46,6 +46,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 39371524923425618}
     m_Modifications:
+    - target: {fileID: 5084032491695768716, guid: 982636d5f314a8b45a1c5ae331f67a92, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
     - target: {fileID: 6070553832343841637, guid: 982636d5f314a8b45a1c5ae331f67a92, type: 3}
       propertyPath: m_Name
       value: RoomB1
@@ -89,6 +93,10 @@ PrefabInstance:
     - target: {fileID: 6255911167290337944, guid: 982636d5f314a8b45a1c5ae331f67a92, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7589961689317771418, guid: 982636d5f314a8b45a1c5ae331f67a92, type: 3}
+      propertyPath: m_Layer
+      value: 6
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -151,6 +159,14 @@ PrefabInstance:
     - target: {fileID: 4336343036661987904, guid: d4d11c20054d72c44affc40629bcf6c0, type: 3}
       propertyPath: m_Name
       value: RoomB6
+      objectReference: {fileID: 0}
+    - target: {fileID: 6089554163682080269, guid: d4d11c20054d72c44affc40629bcf6c0, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 7137396527002737953, guid: d4d11c20054d72c44affc40629bcf6c0, type: 3}
+      propertyPath: m_Layer
+      value: 6
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

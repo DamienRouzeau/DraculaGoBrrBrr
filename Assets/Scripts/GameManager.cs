@@ -33,4 +33,9 @@ public class GameManager : MonoBehaviour
         AudioManager.instance.PlayAudio(transform, "Rewind");
     }
 
+    public void StartTP()
+    {
+        TPManager.instance.TP();
+    }
+
 }

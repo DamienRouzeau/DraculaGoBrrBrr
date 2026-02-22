@@ -6,7 +6,7 @@ public class InterractibleObject : MonoBehaviour
     private bool open = false;
     public void LeverTrigger()
     {
-        open = !open;
+        open = true;
         animator.SetBool("Open", open);
         AudioManager.instance.PlayAudio(transform, "Lever");
     }
