@@ -3,7 +3,22 @@ guid: ea6f331371d5c9644b4a59806c0e382d
 ModelImporter:
   serializedVersion: 24200
   internalIDToNameTable: []
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Lumiere_UV
+    second: {fileID: 2100000, guid: 947ea2d41168e0946b879f2b6609f172, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Plastic
+    second: {fileID: 2100000, guid: 3d2501fb44a345d48b6b92b5f4bbae0f, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: transparence
+    second: {fileID: 2100000, guid: 353841a7b1263c740a59c505730d3bb8, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0
