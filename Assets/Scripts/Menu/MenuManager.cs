@@ -8,6 +8,7 @@ public class MenuManager : MonoBehaviour
     [SerializeField] private GameObject mainMenus;
     private void Start()
     {
+        mainMenus.SetActive(true);
         creditPanel.SetActive(false);
     }
     public void OnPlay()
