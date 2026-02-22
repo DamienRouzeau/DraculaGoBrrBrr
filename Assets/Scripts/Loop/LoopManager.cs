@@ -23,6 +23,9 @@ public class LoopManager : MonoBehaviour
     [SerializeField] private Image timeRemaining;
     [SerializeField] private Image timeRemovedUI;
     [SerializeField] private Image timeAvailableUI;
+    [SerializeField] private Animator gaugeAnim;
+
+    private bool timeMachineIsOn = true;
 
 
     private void Awake()
@@ -40,9 +43,16 @@ public class LoopManager : MonoBehaviour
         OnPlayerDeath();
     }
 
+    public void RemoveTimeMachine()
+    {
+        gaugeAnim.SetTrigger("Destroy");
+        timeMachineIsOn = false;
+    }
+
     #region Timer management
     private void FixedUpdate()
     {
+        if (!timeMachineIsOn) { return; }
         inGameTimer -= Time.fixedDeltaTime * timeModifier;
         if (inGameTimer <= 0)
         {

@@ -1,5 +1,6 @@
 using UnityEngine;
 using UnityEngine.InputSystem;
+using UnityEngine.SceneManagement;
 
 [RequireComponent(typeof(Rigidbody2D))]
 [RequireComponent(typeof(CapsuleCollider2D))]
@@ -95,6 +96,8 @@ public class PlayerController : MonoBehaviour
 
     private Vector2 defaultSize;
     private Vector2 defaultOffset;
+
+    private bool timeMachineIsOn = true;
 
     // MISCELLANEOUS
     private InterractibleObject interractibleObject;
@@ -471,6 +474,10 @@ public class PlayerController : MonoBehaviour
     {
         if(collision.collider.CompareTag("trap") && !isInvincible)
         {
+            if(!timeMachineIsOn)
+            {
+                SceneManager.LoadScene("Menu");
+            }
             GameObject _deadBody = Instantiate(deadBody, transform.position, deadBody.transform.rotation);
             GameManager.instance.Rewind();
             AudioManager.instance.PlayAudio(transform, "DeathSlash");
@@ -481,6 +488,10 @@ public class PlayerController : MonoBehaviour
     {
         if (collision.CompareTag("trap") && !isInvincible)
         {
+            if (!timeMachineIsOn)
+            {
+                SceneManager.LoadScene("Menu");
+            }
             GameObject _deadBody = Instantiate(deadBody, transform.position, deadBody.transform.rotation);
             GameManager.instance.Rewind();
             AudioManager.instance.PlayAudio(transform, "DeathSlash");
@@ -542,4 +553,9 @@ public class PlayerController : MonoBehaviour
     }
 
     #endregion
+
+    public void SetMachine(bool _on)
+    {
+        timeMachineIsOn = _on;
+    }
 }

@@ -1,4 +1,5 @@
 using System;
+using System.Collections;
 using UnityEngine;
 using UnityEngine.Events;
 
@@ -9,12 +10,19 @@ public class GameManager : MonoBehaviour
 
     private UnityEvent rewindEvent = new UnityEvent();
 
+    private Audio currentMusic;
+
 
      
     private void Awake()
     {
         if (Instance != null && Instance != this) Destroy(this);
         else Instance = this;
+    }
+
+    private void Start()
+    {
+        currentMusic = AudioManager.instance.PlayAudio(transform, "Music1");
     }
 
     public void SubscribeRewind(UnityAction _action)
@@ -36,6 +44,21 @@ public class GameManager : MonoBehaviour
     public void StartTP()
     {
         TPManager.instance.TP();
+    }
+
+    public void RemoveTimeMachine()
+    {
+        currentMusic.Stop();
+        currentMusic = null;
+        LoopManager.instance.RemoveTimeMachine();
+        FindFirstObjectByType<PlayerController>()?.SetMachine(false);
+        StartCoroutine(MusicDelayed())
+;   }
+    
+    private IEnumerator MusicDelayed()
+    {
+        yield return new WaitForSeconds(1.5f);
+        currentMusic = AudioManager.instance.PlayAudio(transform, "Music2");
     }
 
 }
