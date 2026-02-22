@@ -48,6 +48,11 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private Transform respawnPoint;
     [SerializeField] private GameObject deadBody;
 
+    [Header("Squash Stretch")]
+    public bool IsDashing => isDashing;
+    public bool IsSliding => isSliding;
+    public bool IsGrounded => isGrounded;
+
     //  COMPONENTS 
 
     private Rigidbody2D rb;
@@ -337,6 +342,7 @@ public class PlayerController : MonoBehaviour
 
         if (jumpBufferTimer > 0 && (isGrounded || coyoteTimer > 0) && !isCrouching)
         {
+            GetComponent<SquashStretch>()?.OnJump();
             rb.linearVelocity = new Vector2(rb.linearVelocity.x, jumpForce);
             jumpBufferTimer = 0;
             coyoteTimer = 0;
@@ -408,8 +414,8 @@ public class PlayerController : MonoBehaviour
             Mathf.MoveTowards(currentVx, targetVx, rate * Time.fixedDeltaTime),
             rb.linearVelocity.y);
 
-        if (moveInput.x > 0.01f) transform.localScale = Vector3.one;
-        else if (moveInput.x < -0.01f) transform.localScale = new Vector3(-1f, 1f, 1f);
+        if (moveInput.x > 0.01f) sprite.flipX = false;
+        else if (moveInput.x < -0.01f) sprite.flipX = true;
     }
 
     #endregion
