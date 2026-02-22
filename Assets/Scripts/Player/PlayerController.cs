@@ -24,6 +24,10 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private float dashAddedSpeed = 12f;
     [SerializeField] private float dashDuration = 0.18f;
     [SerializeField] private float dashCooldown = 0.6f;
+    [SerializeField] private float dashInvincibilityDurations = 0.12f;
+    [SerializeField] private ParticleSystem dashParticles;
+    [SerializeField] private float invincibilityOpacity = 0.1f;
+
 
     [Header("Slide")]
     [SerializeField] private float slideAddedSpeed = 8f;
@@ -40,10 +44,20 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private float groundCheckRadius = 0.15f;
     [SerializeField] private LayerMask groundLayer;
 
+    [Header("Rewind")]
+    [SerializeField] private Transform respawnPoint;
+    [SerializeField] private GameObject deadBody;
+
+    [Header("Squash Stretch")]
+    public bool IsDashing => isDashing;
+    public bool IsSliding => isSliding;
+    public bool IsGrounded => isGrounded;
+
     //  COMPONENTS 
 
     private Rigidbody2D rb;
     private CapsuleCollider2D col;
+    private SpriteRenderer sprite;
 
     //  INPUT 
 
@@ -64,6 +78,7 @@ public class PlayerController : MonoBehaviour
     private float dashCooldownTimer;
     private float dashTimer;
     private float slideTimer;
+    private float invincibilityTimer;
 
     private bool isDashing;
     private bool isSliding;
@@ -72,9 +87,14 @@ public class PlayerController : MonoBehaviour
     private bool slideEndedNaturally;
 
     private float dashDirection;
+    private bool isInvincible;
 
     private Vector2 defaultSize;
     private Vector2 defaultOffset;
+
+    // MISCELLANEOUS
+    private InterractibleObject interractibleObject;
+
 
     #region Unity lifecycle
 
@@ -82,6 +102,7 @@ public class PlayerController : MonoBehaviour
     {
         rb = GetComponent<Rigidbody2D>();
         col = GetComponent<CapsuleCollider2D>();
+        sprite = GetComponent<SpriteRenderer>();
 
         defaultSize = col.size;
         defaultOffset = col.offset;
@@ -89,9 +110,15 @@ public class PlayerController : MonoBehaviour
         inputActions = new PlayerInputActions();
     }
 
+    private void Start()
+    {
+        GameManager.instance.SubscribeRewind(Rewind);
+        inputActions?.Enable();
+    }
+
     private void OnEnable()
     {
-        inputActions.Enable();
+        inputActions?.Enable();
 
         inputActions.Player.Move.performed += ctx => moveInput = ctx.ReadValue<Vector2>();
         inputActions.Player.Move.canceled += ctx => moveInput = Vector2.zero;
@@ -103,6 +130,9 @@ public class PlayerController : MonoBehaviour
 
         inputActions.Player.Crouch.performed += ctx => crouchHeld = true;
         inputActions.Player.Crouch.canceled += ctx => OnCrouchReleased();
+
+        inputActions.Player.Interact.performed += ctx => Interract();
+
     }
 
     private void OnDisable() => inputActions.Disable();
@@ -136,6 +166,18 @@ public class PlayerController : MonoBehaviour
         if (coyoteTimer > 0) coyoteTimer -= dt;
         if (jumpBufferTimer > 0) jumpBufferTimer -= dt;
         if (dashCooldownTimer > 0) dashCooldownTimer -= dt;
+        if (invincibilityTimer > 0)
+        {
+            invincibilityTimer -= dt;
+        }
+        else
+        {
+            isInvincible = false;
+            sprite.color = new Color(sprite.color.r, sprite.color.g, sprite.color.b, 1);
+            dashParticles.Stop();
+
+        }
+
 
         if (isDashing)
         {
@@ -300,6 +342,7 @@ public class PlayerController : MonoBehaviour
 
         if (jumpBufferTimer > 0 && (isGrounded || coyoteTimer > 0) && !isCrouching)
         {
+            GetComponent<SquashStretch>()?.OnJump();
             rb.linearVelocity = new Vector2(rb.linearVelocity.x, jumpForce);
             jumpBufferTimer = 0;
             coyoteTimer = 0;
@@ -324,11 +367,17 @@ public class PlayerController : MonoBehaviour
         float newVx = rb.linearVelocity.x + dashDirection * dashAddedSpeed;
 
         isDashing = true;
+        isInvincible = true;
+        invincibilityTimer = dashInvincibilityDurations;
+
         dashTimer = dashDuration;
         dashCooldownTimer = dashCooldown;
 
         rb.gravityScale = 0f;
         rb.linearVelocity = new Vector2(newVx, 0f);
+        dashParticles.Play();
+        sprite.color = new Color(sprite.color.r, sprite.color.g, sprite.color.b, invincibilityOpacity);
+
     }
 
     private void EndDash()
@@ -365,8 +414,8 @@ public class PlayerController : MonoBehaviour
             Mathf.MoveTowards(currentVx, targetVx, rate * Time.fixedDeltaTime),
             rb.linearVelocity.y);
 
-        if (moveInput.x > 0.01f) transform.localScale = Vector3.one;
-        else if (moveInput.x < -0.01f) transform.localScale = new Vector3(-1f, 1f, 1f);
+        if (moveInput.x > 0.01f) sprite.flipX = false;
+        else if (moveInput.x < -0.01f) sprite.flipX = true;
     }
 
     #endregion
@@ -396,6 +445,56 @@ public class PlayerController : MonoBehaviour
             rb.linearVelocity = new Vector2(Mathf.Sign(vx) * maxHorizontalSpeed, rb.linearVelocity.y);
     }
 
+    #endregion
+
+    #region Collision
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        if(collision.collider.CompareTag("trap") && !isInvincible)
+        {
+            GameObject _deadBody = Instantiate(deadBody, transform.position, deadBody.transform.rotation);
+            GameManager.instance.Rewind();
+        }
+    }
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.CompareTag("trap") && !isInvincible)
+        {
+            GameObject _deadBody = Instantiate(deadBody, transform.position, deadBody.transform.rotation);
+            GameManager.instance.Rewind();
+        }
+        if (collision.CompareTag("object"))
+        {
+            ObjectBehaviour _obj = collision.gameObject.GetComponent<ObjectBehaviour>();
+            _obj.Collect(); 
+        }
+        if (collision.CompareTag("interractibleObject"))
+        {
+            interractibleObject = collision.gameObject.GetComponent<InterractibleObject>();
+        }
+    }
+
+    private void OnTriggerExit2D(Collider2D collision)
+    {
+        if (collision.CompareTag("interractibleObject"))
+        {
+            interractibleObject = null;
+        }
+    }
+    #endregion
+
+    #region Rewind
+    private void Rewind()
+    {
+        transform.position = respawnPoint.position;
+    }
+    #endregion
+
+    #region Interract
+    private void Interract()
+    {
+        interractibleObject?.LeverTrigger();
+    }
     #endregion
 
     #region Debug

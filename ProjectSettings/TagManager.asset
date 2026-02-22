@@ -3,7 +3,11 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 3
-  tags: []
+  tags:
+  - trap
+  - object
+  - lever
+  - interractibleObject
   layers:
   - Default
   - TransparentFX
@@ -12,7 +16,7 @@ TagManager:
   - Water
   - UI
   - Ground
-  - 
+  - Trap
   - 
   - 
   - 

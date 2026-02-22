@@ -123,9 +123,9 @@ public partial class @PlayerInputActions: IInputActionCollection2, IDisposable
                     ""name"": ""Interact"",
                     ""type"": ""Button"",
                     ""id"": ""852140f2-7766-474d-8707-702459ba45f3"",
-                    ""expectedControlType"": ""Button"",
+                    ""expectedControlType"": """",
                     ""processors"": """",
-                    ""interactions"": ""Hold"",
+                    ""interactions"": """",
                     ""initialStateCheck"": false
                 },
                 {
@@ -441,6 +441,17 @@ public partial class @PlayerInputActions: IInputActionCollection2, IDisposable
                 },
                 {
                     ""name"": """",
+                    ""id"": ""110452cf-e77c-4e00-a599-29f38edee17e"",
+                    ""path"": ""<Keyboard>/p"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Keyboard&Mouse"",
+                    ""action"": ""Dash"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
                     ""id"": ""8cbb2f4b-a784-49cc-8d5e-c010b8c7f4e6"",
                     ""path"": ""<Gamepad>/leftStickPress"",
                     ""interactions"": """",
@@ -553,6 +564,17 @@ public partial class @PlayerInputActions: IInputActionCollection2, IDisposable
                     ""name"": """",
                     ""id"": ""36e52cba-0905-478e-a818-f4bfcb9f3b9a"",
                     ""path"": ""<Keyboard>/leftCtrl"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Keyboard&Mouse"",
+                    ""action"": ""Crouch"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""7b1d28c6-e463-4c56-bb64-4ed880d6cffe"",
+                    ""path"": ""<Keyboard>/o"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": ""Keyboard&Mouse"",
