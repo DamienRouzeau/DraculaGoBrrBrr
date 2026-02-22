@@ -24542,8 +24542,9 @@ GameObject:
   m_Component:
   - component: {fileID: 7971694590294300041}
   - component: {fileID: 7278587198880929521}
+  - component: {fileID: 3024895972029466996}
   m_Layer: 0
-  m_Name: collider
+  m_Name: DoorTrigger
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -24610,6 +24611,18 @@ BoxCollider2D:
   m_AutoTiling: 0
   m_Size: {x: 3.8855133, y: 8.62677}
   m_EdgeRadius: 0
+--- !u!114 &3024895972029466996
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5052713701089680845}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6c0895565a6cdde42a5a7569921e8381, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::DoorTrigger
 --- !u!1 &5082724786310884375
 GameObject:
   m_ObjectHideFlags: 0
