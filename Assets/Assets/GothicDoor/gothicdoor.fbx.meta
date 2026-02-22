@@ -3,7 +3,17 @@ guid: 478ee887149b0c34b87f6e2c05e95c60
 ModelImporter:
   serializedVersion: 24200
   internalIDToNameTable: []
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Arceau_Door
+    second: {fileID: 2100000, guid: ba138917478b1ea48bd1141e558d647a, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Door
+    second: {fileID: 2100000, guid: 407ee9073af307949870430f989d07cc, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0

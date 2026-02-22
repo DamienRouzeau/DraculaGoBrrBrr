@@ -3,7 +3,17 @@ guid: 77e34b1c973ff9943811876ee5fd56f0
 ModelImporter:
   serializedVersion: 24200
   internalIDToNameTable: []
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Arceau_TimeMachine
+    second: {fileID: 2100000, guid: 84aa20d2103bb02409d64f9f4e02484a, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Emissive_Boule_TimeMachine
+    second: {fileID: 2100000, guid: f93c17bdbf993584181005d23f29d4f2, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0
