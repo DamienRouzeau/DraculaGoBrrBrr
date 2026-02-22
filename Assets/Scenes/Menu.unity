@@ -933,7 +933,55 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Lorem ipsum
+  m_text: "Game Design & Level Design\r\n\r\nGwab \u2013 A fait 14 salles alors qu'on
+    lui en avait demand\xE9 5.\r\nPersonne ne sait pourquoi. Elle non plus.\r\n\r\nS'est
+    auto-assign\xE9 Lead Game Designer, Lead Level Designer ET Dev UI.\r\nPersonne
+    l'a arr\xEAt\xE9e. C'est notre faute.\r\n\r\n--------------------------------\r\n\r\nD\xE9veloppeur\r\n\r\nDamien
+    \u2013 Quand on lui demandait \"\xE7a avance ?\" il r\xE9pondait\r\n\"push me...
+    and then juste touch me\" et retournait coder\r\nOn a jamais su si c'\xE9tait
+    une r\xE9ponse ou s'il chantait\r\n\r\n(L'\xE9quipe tient \xE0 pr\xE9ciser qu'elle
+    lui a propos\xE9 d'aller dormir.\r\nIl a dit \"just one more bug\". C'\xE9tait
+    il y a 11h.)\r\n\r\n---------------------------------\r\n\r\nArt 3D\r\n\r\nMaxime
+    \u2013 A mod\xE9lis\xE9 tellement de trucs en 3D qu'il a d\xE9velopp\xE9\r\nune
+    relation personnelle avec chaque vertex. Ils lui manquent d\xE9j\xE0.\r\n\r\n(Maxime
+    voulait Unreal. On a pas pris Unreal.\r\nMaxime a quand m\xEAme tout fait. Maxime
+    n'a pas oubli\xE9. Maxime attend.)\r\n\r\nt\xE9moignage sur Maxime :\r\n\r\n\"Il
+    m'a regard\xE9 dans les yeux et il a dit 'on aurait d\xFB prendre Unreal'.\r\nC'\xE9tait
+    3h du mat. On avait m\xEAme pas commenc\xE9 le jeu.\" \u2013 Gwab Jeudi 3h\r\n\r\n---------------------------------\r\n\r\nArt
+    3D\r\n\r\nJason \u2013 On lui a dit 'tu feras le character design'.\r\nIl a r\xE9pondu
+    'ouais pas de souci'. C'\xE9tait un mensonge.\r\nIl avait tous les soucis. Il
+    les a r\xE9gl\xE9s quand m\xEAme.\r\n\r\nArtiste 3D \xB7 Chara Designer \xB7\r\nHomme
+    qui a googlel\xE9 \"comment faire un perso 3D\" \xE0 2h du mat \xB7 Survivant\r\n\r\n---------------------------------\r\n\r\nArt
+    2D\r\n\r\nChaline \u2013 Chaline a cr\xE9\xE9 les textures et les d\xE9cors du
+    jeu.\r\nSi t'as trouv\xE9 le jeu beau, c'est elle. Tu peux la remercier.\r\nElle
+    accepte les compliments avec une fausse modestie tr\xE8s convaincante.\r\n\r\n(On
+    lui donnait un brief. Elle rendait quelque chose de mieux que ce qu'on avait
+    imagin\xE9.\r\nOn a arr\xEAt\xE9 de faire des briefs.)\r\n\r\n---------------------------------\r\n\r\nArt
+    2D\r\n\r\nJean Paul \u2013 \"Au d\xE9but il \xE9tait artiste. Puis on lui a demand\xE9
+    un petit truc.\r\nPuis un autre. Puis encore un. Jean Paul a pas dit non une
+    seule fois.\r\nJean Paul a tout fait. Jean Paul va bien. (Jean Paul va pas bien.)\"\r\n\r\nArtiste
+    \xB7 Game Designer \xB7 Chercheur de sons \xB7 D\xE9coupeur d'UI \xB7\r\nTorcheur
+    de table \xB7 Psychologue de l'\xE9quipe \xB7\r\nResponsable de trucs qu'on a
+    m\xEAme pas de nom pour d\xE9crire\r\n\r\n(Son vrai r\xF4le sur le projet : \"ouais
+    je peux faire \xE7a\".\r\nSa fr\xE9quence d'utilisation : constante. Son niveau
+    de plainte :\r\nz\xE9ro. Son niveau de fatigue : on pr\xE9f\xE8re pas savoir.)\r\n\r\n---------------------------------\r\n\r\nSPONSORS\r\n\r\n\r\nPush
+    Me Energy Drink\u2122\r\n\"On n'a pas sponsoris\xE9 ce jeu mais Damien en a bu
+    l'\xE9quivalent en caf\xE9\"\r\n\r\nSleepNot Pro\xAE\r\nSolutions de productivit\xE9
+    nocturne pour d\xE9veloppeurs en d\xE9tresse\r\n\"Dormir c'est pour les gens
+    qui n'ont pas de build \xE0 rendre\"\r\n\r\nTablePropre & Co.\r\nServices de
+    nettoyage de surfaces de travail en game jam\r\nPartenaire officiel de Jean Paul
+    depuis 48h\r\n\r\nSALLE14\u2122 \u2013 L'immobilier du Level Design\r\n\"Quand
+    Gwab dit 'juste une salle de plus', croyez-la pas\"\r\nPromoteur officiel de
+    donjons depuis 2024\r\n\r\nKILIAN GLOBAL ENTERPRISES\xAE\r\n\r\n\"ATTENTION :
+    Kilian a pay\xE9 pour cette game jam.\r\nSi vous croisez Kilian dans la rue :
+    remerciez-le chaleureusement,\r\nacceptez pas qu'il paye votre caf\xE9 il a plus
+    les moyens,\r\nf\xE9licitez-le pour son organisation, et \xE9loignez-vous RAPIDEMENT\r\net
+    CALMEMENT avant qu'il sorte sa calculette et r\xE9alise le total.\"\r\n\"Ne courez
+    pas. \xC7a l'inqui\xE8terait. Marchez vite. Tr\xE8s vite.\"\r\n\r\nCAF\xC9 :
+    47 tasses\r\n\r\nRED BULL : 23 canettes\r\n\r\nPIZZAS : 6 command\xE9es / 5 mang\xE9es
+    / 1 disparue\r\n\r\nSOMMEIL : 31h au total pour l'\xE9quipe\r\n\r\nSATISFACTION
+    : 112h d'\xE9coutes\r\n\r\nNETTOYAGES DE TABLE : 12\r\n\r\nCRISES EXISTENTIELLES
+    : 34\r\n\r\n\U0001F4B0 BUDGET KILIAN : \u20AC\u20AC\u20AC\u20AC\u20AC\u20AC\u20AC"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 0161d805a3764c089bef00bfe00793f5, type: 2}
   m_sharedMaterial: {fileID: 2147374, guid: 0161d805a3764c089bef00bfe00793f5, type: 2}
@@ -960,15 +1008,15 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 36
-  m_fontSizeBase: 36
+  m_fontSize: 20
+  m_fontSizeBase: 20
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
   m_fontSizeMax: 72
   m_fontStyle: 0
   m_HorizontalAlignment: 2
-  m_VerticalAlignment: 512
+  m_VerticalAlignment: 256
   m_textAlignment: 65535
   m_characterSpacing: 0
   m_characterHorizontalScale: 1
@@ -1712,6 +1760,7 @@ GameObject:
   - component: {fileID: 1269253880}
   - component: {fileID: 1269253882}
   - component: {fileID: 1269253881}
+  - component: {fileID: 1269253883}
   m_Layer: 5
   m_Name: CreditPanel
   m_TagString: Untagged
@@ -1778,6 +1827,20 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1269253879}
   m_CullTransparentMesh: 1
+--- !u!114 &1269253883
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1269253879}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5049d5407f4c837409d04126871b2551, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Credit
+  speed: 30
+  creditsText: {fileID: 476890453}
 --- !u!1 &2089542538
 GameObject:
   m_ObjectHideFlags: 0
