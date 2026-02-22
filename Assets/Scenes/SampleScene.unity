@@ -220,7 +220,7 @@ Transform:
   m_GameObject: {fileID: 62821756}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: -1.05, z: 0}
+  m_LocalPosition: {x: 0, y: -1.16, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1862,6 +1862,7 @@ GameObject:
   - component: {fileID: 1270734683}
   - component: {fileID: 1270734685}
   - component: {fileID: 1270734686}
+  - component: {fileID: 1270734687}
   - component: {fileID: 1270734682}
   - component: {fileID: 1270734681}
   - component: {fileID: 1270734684}
@@ -2152,7 +2153,7 @@ MonoBehaviour:
   crouchOffset: {x: 0, y: -0.5}
   crouchSpeed: 4
   groundCheck: {fileID: 62821757}
-  groundCheckRadius: 0.15
+  groundCheckRadius: 0.3
   groundLayer:
     serializedVersion: 2
     m_Bits: 64
@@ -2175,6 +2176,38 @@ MonoBehaviour:
   rewindTotalDuration: 5
   rewindDelay: 0
   playerController: {fileID: 1270734685}
+--- !u!114 &1270734687
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1270734679}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 189afbcb0b1ecbf4d9cf60afe0e82887, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::SquashStretch
+  visualTransform: {fileID: 1270734680}
+  playerController: {fileID: 1270734685}
+  rb: {fileID: 1270734681}
+  maxVelocityY: 16
+  maxStretchY: 1.35
+  maxSquashY: 0.7
+  airLerpSpeed: 8
+  landSquashY: 0.55
+  landSquashDuration: 0.08
+  landRecoverDuration: 0.18
+  moveSpeed: 8
+  jumpAnticipateSquash: 0.75
+  jumpAnticipateStretch: 1.3
+  jumpAnticipateTime: 0.06
+  dashStretchX: 1.4
+  dashSquashY: 0.7
+  dashLerpSpeed: 20
+  slideSquashY: 0.65
+  slideLerpSpeed: 12
+  returnLerpSpeed: 10
 --- !u!1 &1289088902
 GameObject:
   m_ObjectHideFlags: 0
