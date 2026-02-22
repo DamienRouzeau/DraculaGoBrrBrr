@@ -48,6 +48,11 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private Transform respawnPoint;
     [SerializeField] private GameObject deadBody;
 
+    [Header("Squash Stretch")]
+    public bool IsDashing => isDashing;
+    public bool IsSliding => isSliding;
+    public bool IsGrounded => isGrounded;
+
     //  COMPONENTS 
 
     private Rigidbody2D rb;
@@ -87,6 +92,10 @@ public class PlayerController : MonoBehaviour
     private Vector2 defaultSize;
     private Vector2 defaultOffset;
 
+    // MISCELLANEOUS
+    private InterractibleObject interractibleObject;
+
+
     #region Unity lifecycle
 
     private void Awake()
@@ -121,6 +130,8 @@ public class PlayerController : MonoBehaviour
 
         inputActions.Player.Crouch.performed += ctx => crouchHeld = true;
         inputActions.Player.Crouch.canceled += ctx => OnCrouchReleased();
+
+        inputActions.Player.Interact.performed += ctx => Interract();
 
     }
 
@@ -331,6 +342,7 @@ public class PlayerController : MonoBehaviour
 
         if (jumpBufferTimer > 0 && (isGrounded || coyoteTimer > 0) && !isCrouching)
         {
+            GetComponent<SquashStretch>()?.OnJump();
             rb.linearVelocity = new Vector2(rb.linearVelocity.x, jumpForce);
             jumpBufferTimer = 0;
             coyoteTimer = 0;
@@ -402,8 +414,8 @@ public class PlayerController : MonoBehaviour
             Mathf.MoveTowards(currentVx, targetVx, rate * Time.fixedDeltaTime),
             rb.linearVelocity.y);
 
-        if (moveInput.x > 0.01f) transform.localScale = Vector3.one;
-        else if (moveInput.x < -0.01f) transform.localScale = new Vector3(-1f, 1f, 1f);
+        if (moveInput.x > 0.01f) sprite.flipX = false;
+        else if (moveInput.x < -0.01f) sprite.flipX = true;
     }
 
     #endregion
@@ -435,7 +447,7 @@ public class PlayerController : MonoBehaviour
 
     #endregion
 
-    #region Death
+    #region Collision
     private void OnCollisionEnter2D(Collision2D collision)
     {
         if(collision.collider.CompareTag("trap") && !isInvincible)
@@ -451,6 +463,23 @@ public class PlayerController : MonoBehaviour
             GameObject _deadBody = Instantiate(deadBody, transform.position, deadBody.transform.rotation);
             GameManager.instance.Rewind();
         }
+        if (collision.CompareTag("object"))
+        {
+            ObjectBehaviour _obj = collision.gameObject.GetComponent<ObjectBehaviour>();
+            _obj.Collect(); 
+        }
+        if (collision.CompareTag("interractibleObject"))
+        {
+            interractibleObject = collision.gameObject.GetComponent<InterractibleObject>();
+        }
+    }
+
+    private void OnTriggerExit2D(Collider2D collision)
+    {
+        if (collision.CompareTag("interractibleObject"))
+        {
+            interractibleObject = null;
+        }
     }
     #endregion
 
@@ -458,6 +487,13 @@ public class PlayerController : MonoBehaviour
     private void Rewind()
     {
         transform.position = respawnPoint.position;
+    }
+    #endregion
+
+    #region Interract
+    private void Interract()
+    {
+        interractibleObject?.LeverTrigger();
     }
     #endregion
 

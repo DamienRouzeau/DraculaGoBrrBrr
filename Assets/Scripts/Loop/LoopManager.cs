@@ -15,6 +15,7 @@ public class LoopManager : MonoBehaviour
     [Header("Timer")]
     [SerializeField] private float inGameTimer;
     [SerializeField] private float removeTimeMult;
+    [SerializeField] private float timeModifier = 1;
 
     [Header("UI")]
     [SerializeField] private RectTransform gauge;
@@ -42,7 +43,7 @@ public class LoopManager : MonoBehaviour
     #region Timer management
     private void FixedUpdate()
     {
-        inGameTimer -= Time.fixedDeltaTime;
+        inGameTimer -= Time.fixedDeltaTime * timeModifier;
         if (inGameTimer <= 0)
         {
             GameManager.instance.Rewind();
@@ -65,7 +66,20 @@ public class LoopManager : MonoBehaviour
 
     public void AddTime(float _time)
     {
-        timeAvailable += _time;
+        if(timeAvailable + _time > maxTime) 
+            timeAvailable = maxTime;
+        else
+            timeAvailable += _time;
+
+        if (removedTime - _time < 0)
+            removedTime = 0;
+        else
+            removeTimeMult -= _time;
+    }
+
+    public void ModifyTimeModifier(float _value)
+    {
+        timeModifier = _value;
     }
 
 
@@ -88,7 +102,6 @@ public class LoopManager : MonoBehaviour
 
         // Gauge of time removed
         float _sizeRemovedTime = (removedTime * (_size - _spacing)) / maxTime;
-        Debug.Log(removedTime + " x (" + _size + " - " + _spacing + ") / " + maxTime);
         _rectTransform = timeRemovedUI.GetComponent<RectTransform>();
         _rectTransform.sizeDelta = new Vector2(_sizeRemovedTime, _rectTransform.sizeDelta.y);
 
