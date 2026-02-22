@@ -462,6 +462,7 @@ public class PlayerController : MonoBehaviour
         {
             GameObject _deadBody = Instantiate(deadBody, transform.position, deadBody.transform.rotation);
             GameManager.instance.Rewind();
+            isInvincible = true;
         }
         if (collision.CompareTag("object"))
         {
@@ -487,6 +488,11 @@ public class PlayerController : MonoBehaviour
     private void Rewind()
     {
         transform.position = respawnPoint.position;
+    }
+
+    public void StopBeingInvincible()
+    {
+        isInvincible = false;
     }
     #endregion
 

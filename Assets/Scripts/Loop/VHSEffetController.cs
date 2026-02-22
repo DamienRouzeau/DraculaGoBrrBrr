@@ -48,6 +48,7 @@ public class VHSEffectController : MonoBehaviour
     {
         if (effectCoroutine != null) StopCoroutine(effectCoroutine);
         effectCoroutine = StartCoroutine(FadeOut());
+        FindFirstObjectByType<PlayerController>().StopBeingInvincible();
     }
 
     private IEnumerator FadeIn()
