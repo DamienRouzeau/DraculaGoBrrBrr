@@ -48,6 +48,9 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private Transform respawnPoint;
     [SerializeField] private GameObject deadBody;
 
+    [Header("Audio")]
+    [SerializeField] private float stepInterval = 0.4f;
+
     [Header("Squash Stretch")]
     public bool IsDashing => isDashing;
     public bool IsSliding => isSliding;
@@ -79,6 +82,7 @@ public class PlayerController : MonoBehaviour
     private float dashTimer;
     private float slideTimer;
     private float invincibilityTimer;
+    private float stepTimer = 0.4f;
 
     private bool isDashing;
     private bool isSliding;
@@ -177,6 +181,12 @@ public class PlayerController : MonoBehaviour
             dashParticles.Stop();
 
         }
+        if(stepTimer > 0 && isGrounded && (moveInput.x > 0.1f || moveInput.x < -0.1f) && !isDashing && !isSliding) stepTimer -= dt;
+        if (stepTimer <= 0)
+        {
+            AudioManager.instance.PlayAudio(transform, "BetonStep", 0.4f, Random.Range(0.9f, 1.1f));
+            stepTimer = stepInterval;
+        }
 
 
         if (isDashing)
@@ -203,6 +213,11 @@ public class PlayerController : MonoBehaviour
 
         if (wasGrounded && !isGrounded)
             coyoteTimer = coyoteTime;
+        if (!wasGrounded && isGrounded)
+        {
+            AudioManager.instance.PlayAudio(transform, "BetonStep", 0.55f, Random.Range(0.8f, 0.9f));
+        }
+
     }
 
     #endregion
@@ -267,6 +282,8 @@ public class PlayerController : MonoBehaviour
         rb.linearVelocity = new Vector2(
             rb.linearVelocity.x + dir * slideAddedSpeed,
             rb.linearVelocity.y);
+        AudioManager.instance.PlayAudio(transform, "Slide");
+
 
         SetCrouchCollider();
     }
@@ -345,6 +362,7 @@ public class PlayerController : MonoBehaviour
             GetComponent<SquashStretch>()?.OnJump();
             rb.linearVelocity = new Vector2(rb.linearVelocity.x, jumpForce);
             jumpBufferTimer = 0;
+            AudioManager.instance.PlayAudio(transform, "Jump");
             coyoteTimer = 0;
         }
     }
@@ -376,6 +394,7 @@ public class PlayerController : MonoBehaviour
         rb.gravityScale = 0f;
         rb.linearVelocity = new Vector2(newVx, 0f);
         dashParticles.Play();
+        AudioManager.instance.PlayAudio(transform, "Dash");
         sprite.color = new Color(sprite.color.r, sprite.color.g, sprite.color.b, invincibilityOpacity);
 
     }
@@ -454,6 +473,8 @@ public class PlayerController : MonoBehaviour
         {
             GameObject _deadBody = Instantiate(deadBody, transform.position, deadBody.transform.rotation);
             GameManager.instance.Rewind();
+            AudioManager.instance.PlayAudio(transform, "DeathSlash");
+
         }
     }
     private void OnTriggerEnter2D(Collider2D collision)
@@ -462,11 +483,15 @@ public class PlayerController : MonoBehaviour
         {
             GameObject _deadBody = Instantiate(deadBody, transform.position, deadBody.transform.rotation);
             GameManager.instance.Rewind();
+            AudioManager.instance.PlayAudio(transform, "DeathSlash");
+            isInvincible = true;
         }
         if (collision.CompareTag("object"))
         {
             ObjectBehaviour _obj = collision.gameObject.GetComponent<ObjectBehaviour>();
-            _obj.Collect(); 
+            _obj.Collect();
+            AudioManager.instance.PlayAudio(transform, "Item");
+
         }
         if (collision.CompareTag("interractibleObject"))
         {
@@ -487,6 +512,11 @@ public class PlayerController : MonoBehaviour
     private void Rewind()
     {
         transform.position = respawnPoint.position;
+    }
+
+    public void StopBeingInvincible()
+    {
+        isInvincible = false;
     }
     #endregion
 

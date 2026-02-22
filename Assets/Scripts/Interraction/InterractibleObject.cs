@@ -8,5 +8,6 @@ public class InterractibleObject : MonoBehaviour
     {
         open = !open;
         animator.SetBool("Open", open);
+        AudioManager.instance.PlayAudio(transform, "Lever");
     }
 }

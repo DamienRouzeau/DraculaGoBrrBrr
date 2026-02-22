@@ -10,7 +10,8 @@ public class ObjectBehaviour : MonoBehaviour
     [SerializeField] private CircleCollider2D col;
     public void Collect()
     {
-        switch(type)
+
+        switch (type)
         {
             case ObjectType.AddTime:
                 LoopManager.instance.AddTime(strenght);

@@ -30,6 +30,7 @@ public class GameManager : MonoBehaviour
     public void Rewind()
     {
         rewindEvent.Invoke();
+        AudioManager.instance.PlayAudio(transform, "Rewind");
     }
 
 }
