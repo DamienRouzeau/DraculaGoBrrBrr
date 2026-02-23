@@ -1,0 +1,637 @@
+fileFormatVersion: 2
+guid: 1132e360b3bf75d4a8d0b2d27e9298c6
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 5693391211199822667
+    second: Craie_0
+  - first:
+      213: -5489367071406508044
+    second: Craie_1
+  - first:
+      213: -5239612254974781025
+    second: Craie_2
+  - first:
+      213: -1481758803600984626
+    second: Craie_3
+  - first:
+      213: 1356366849136028476
+    second: Craie_4
+  - first:
+      213: -3461400746110123615
+    second: Craie_5
+  - first:
+      213: -1471445493061552635
+    second: Craie_6
+  - first:
+      213: 3128186501472327463
+    second: Craie_7
+  - first:
+      213: 6351063716859924894
+    second: Craie_8
+  - first:
+      213: -5836182491527135947
+    second: Craie_9
+  - first:
+      213: 6953728363222805299
+    second: Craie_10
+  - first:
+      213: 3703956956694546738
+    second: Craie_11
+  - first:
+      213: -7502023376899133999
+    second: Craie_12
+  - first:
+      213: 6084828588549686902
+    second: Craie_13
+  - first:
+      213: -404695914687292667
+    second: Craie_14
+  - first:
+      213: -18650021105132145
+    second: Craie_15
+  - first:
+      213: 5987211490656380274
+    second: Craie_16
+  - first:
+      213: -1096826449096299334
+    second: Craie_17
+  - first:
+      213: 3747160195253932743
+    second: Craie_18
+  - first:
+      213: 9223255478135721843
+    second: Craie_19
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Craie_0
+      rect:
+        serializedVersion: 2
+        x: 447
+        y: 1151
+        width: 134
+        height: 201
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b4b75e6442df20f40800000000000000
+      internalID: 5693391211199822667
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Craie_1
+      rect:
+        serializedVersion: 2
+        x: 751
+        y: 1093
+        width: 129
+        height: 241
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4f7b6138bb9d1d3b0800000000000000
+      internalID: -5489367071406508044
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Craie_2
+      rect:
+        serializedVersion: 2
+        x: 1554
+        y: 1267
+        width: 34
+        height: 40
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f99d17d2a682947b0800000000000000
+      internalID: -5239612254974781025
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Craie_3
+      rect:
+        serializedVersion: 2
+        x: 1617
+        y: 1279
+        width: 25
+        height: 52
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ec53e84083cbf6be0800000000000000
+      internalID: -1481758803600984626
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Craie_4
+      rect:
+        serializedVersion: 2
+        x: 1669
+        y: 1267
+        width: 36
+        height: 52
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c3b6ed38678c2d210800000000000000
+      internalID: 1356366849136028476
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Craie_5
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 758
+        width: 661
+        height: 491
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1a185d65c52a6ffc0800000000000000
+      internalID: -3461400746110123615
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Craie_6
+      rect:
+        serializedVersion: 2
+        x: 607
+        y: 962
+        width: 1209
+        height: 285
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 50677bfbe10649be0800000000000000
+      internalID: -1471445493061552635
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Craie_7
+      rect:
+        serializedVersion: 2
+        x: 1035
+        y: 1089
+        width: 83
+        height: 176
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7271e6b9c0d896b20800000000000000
+      internalID: 3128186501472327463
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Craie_8
+      rect:
+        serializedVersion: 2
+        x: 1407
+        y: 1222
+        width: 128
+        height: 28
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e91de451dc2832850800000000000000
+      internalID: 6351063716859924894
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Craie_9
+      rect:
+        serializedVersion: 2
+        x: 1804
+        y: 999
+        width: 15
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 53dbb2402f6b10fa0800000000000000
+      internalID: -5836182491527135947
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Craie_10
+      rect:
+        serializedVersion: 2
+        x: 1808
+        y: 1014
+        width: 7
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 33b247a9a1b908060800000000000000
+      internalID: 6953728363222805299
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Craie_11
+      rect:
+        serializedVersion: 2
+        x: 1811
+        y: 991
+        width: 93
+        height: 66
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2398d1b4a39176330800000000000000
+      internalID: 3703956956694546738
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Craie_12
+      rect:
+        serializedVersion: 2
+        x: 1816
+        y: 991
+        width: 7
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1dd20437c7573e790800000000000000
+      internalID: -7502023376899133999
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Craie_13
+      rect:
+        serializedVersion: 2
+        x: 1821
+        y: 999
+        width: 10
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 67645abcc57a17450800000000000000
+      internalID: 6084828588549686902
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Craie_14
+      rect:
+        serializedVersion: 2
+        x: 1832
+        y: 1018
+        width: 12
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 50b1303b53b326af0800000000000000
+      internalID: -404695914687292667
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Craie_15
+      rect:
+        serializedVersion: 2
+        x: 1885
+        y: 1013
+        width: 10
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f8d99f497edbdbff0800000000000000
+      internalID: -18650021105132145
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Craie_16
+      rect:
+        serializedVersion: 2
+        x: 1890
+        y: 1006
+        width: 31
+        height: 37
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 275e5bf0129d61350800000000000000
+      internalID: 5987211490656380274
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Craie_17
+      rect:
+        serializedVersion: 2
+        x: 1906
+        y: 991
+        width: 13
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: abcac51e72a47c0f0800000000000000
+      internalID: -1096826449096299334
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Craie_18
+      rect:
+        serializedVersion: 2
+        x: 686
+        y: 758
+        width: 328
+        height: 227
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7c218922856900430800000000000000
+      internalID: 3747160195253932743
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Craie_19
+      rect:
+        serializedVersion: 2
+        x: 1050
+        y: 766
+        width: 308
+        height: 219
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 37f84fe8df59fff70800000000000000
+      internalID: 9223255478135721843
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      Craie_0: 5693391211199822667
+      Craie_1: -5489367071406508044
+      Craie_10: 6953728363222805299
+      Craie_11: 3703956956694546738
+      Craie_12: -7502023376899133999
+      Craie_13: 6084828588549686902
+      Craie_14: -404695914687292667
+      Craie_15: -18650021105132145
+      Craie_16: 5987211490656380274
+      Craie_17: -1096826449096299334
+      Craie_18: 3747160195253932743
+      Craie_19: 9223255478135721843
+      Craie_2: -5239612254974781025
+      Craie_3: -1481758803600984626
+      Craie_4: 1356366849136028476
+      Craie_5: -3461400746110123615
+      Craie_6: -1471445493061552635
+      Craie_7: 3128186501472327463
+      Craie_8: 6351063716859924894
+      Craie_9: -5836182491527135947
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

@@ -363,7 +363,7 @@ RectTransform:
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 500, y: 0}
+  m_SizeDelta: {x: 500, y: 25}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &42922458
 MonoBehaviour:
@@ -469,7 +469,7 @@ RectTransform:
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 0, y: 0}
+  m_SizeDelta: {x: 0, y: 25}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &90740570
 MonoBehaviour:
@@ -687,6 +687,8 @@ GameObject:
   - component: {fileID: 156774537}
   - component: {fileID: 156774538}
   - component: {fileID: 156774539}
+  - component: {fileID: 156774541}
+  - component: {fileID: 156774540}
   m_Layer: 5
   m_Name: TimeGauge
   m_TagString: Untagged
@@ -713,7 +715,7 @@ RectTransform:
   m_AnchorMin: {x: 1, y: 1}
   m_AnchorMax: {x: 1, y: 1}
   m_AnchoredPosition: {x: -30, y: -30}
-  m_SizeDelta: {x: 500, y: 100}
+  m_SizeDelta: {x: 550, y: 50}
   m_Pivot: {x: 1, y: 1}
 --- !u!114 &156774538
 MonoBehaviour:
@@ -728,16 +730,16 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.HorizontalLayoutGroup
   m_Padding:
-    m_Left: 0
+    m_Left: 19
     m_Right: 0
     m_Top: 0
     m_Bottom: 0
-  m_ChildAlignment: 0
+  m_ChildAlignment: 3
   m_Spacing: 3
-  m_ChildForceExpandWidth: 1
+  m_ChildForceExpandWidth: 0
   m_ChildForceExpandHeight: 1
   m_ChildControlWidth: 0
-  m_ChildControlHeight: 1
+  m_ChildControlHeight: 0
   m_ChildScaleWidth: 0
   m_ChildScaleHeight: 0
   m_ReverseArrangement: 0
@@ -763,6 +765,44 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &156774540
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 156774536}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.Image
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_Sprite: {fileID: 7062967978905780417, guid: 3545d4f10a096504fa69fe0349b37c65, type: 3}
+  m_Type: 0
+  m_PreserveAspect: 0
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+  m_UseSpriteMesh: 0
+  m_PixelsPerUnitMultiplier: 1
+--- !u!222 &156774541
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 156774536}
+  m_CullTransparentMesh: 1
 --- !u!1001 &193462536
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1123,6 +1163,10 @@ PrefabInstance:
       propertyPath: m_LocalPosition.y
       value: 10
       objectReference: {fileID: 0}
+    - target: {fileID: 8307915606689499159, guid: f829d4200b21991449c51ca53a7b1321, type: 3}
+      propertyPath: garlics
+      value: 
+      objectReference: {fileID: 1964909412}
     - target: {fileID: 8718362509857406238, guid: f829d4200b21991449c51ca53a7b1321, type: 3}
       propertyPath: m_LocalPosition.y
       value: 0
@@ -2987,6 +3031,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::InterractibleObject
   animator: {fileID: 411356086}
   isTimeMachine: 1
+  trigger: {fileID: 2110009726}
 --- !u!1 &474263167
 GameObject:
   m_ObjectHideFlags: 0
@@ -3935,7 +3980,7 @@ RectTransform:
   m_AnchorMin: {x: 0, y: 0.5}
   m_AnchorMax: {x: 0, y: 0.5}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 500, y: 100}
+  m_SizeDelta: {x: 500, y: 25}
   m_Pivot: {x: 0, y: 0.5}
 --- !u!114 &529084831
 MonoBehaviour:
@@ -4909,7 +4954,7 @@ AudioSource:
   Priority: 128
   DopplerLevel: 1
   MinDistance: 1
-  MaxDistance: 500
+  MaxDistance: 50
   Pan2D: 0
   rolloffMode: 0
   BypassEffects: 0
@@ -4944,7 +4989,7 @@ AudioSource:
     m_Curve:
     - serializedVersion: 3
       time: 0
-      value: 0
+      value: 1
       inSlope: 0
       outSlope: 0
       tangentMode: 0
@@ -4974,7 +5019,7 @@ AudioSource:
     m_Curve:
     - serializedVersion: 3
       time: 0
-      value: 1
+      value: 0.912
       inSlope: 0
       outSlope: 0
       tangentMode: 0
@@ -5971,6 +6016,7 @@ MonoBehaviour:
   removeTimeMult: 0.2
   timeModifier: 1
   gauge: {fileID: 156774537}
+  maxSize: 500
   gaugeContainer: {fileID: 156774538}
   timeRemaining: {fileID: 529084831}
   timeRemovedUI: {fileID: 90740570}
@@ -7564,7 +7610,7 @@ Rigidbody2D:
   m_Mass: 1
   m_LinearDamping: 0
   m_AngularDamping: 0.05
-  m_GravityScale: 1
+  m_GravityScale: 2.5
   m_Material: {fileID: 0}
   m_IncludeLayers:
     serializedVersion: 2
@@ -7790,24 +7836,25 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c028f0dd250e5fc419109f54b7a57533, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PlayerController
-  moveSpeed: 8
+  defaultGravityModifier: 2.5
+  moveSpeed: 12
   acceleration: 20
   deceleration: 100
   maxHorizontalSpeed: 28
-  jumpForce: 16
-  fallGravityMultiplier: 2.5
+  jumpForce: 35
+  fallGravityMultiplier: 3
   lowJumpMultiplier: 2
   coyoteTime: 0.12
   jumpBufferTime: 0.1
-  dashAddedSpeed: 12
+  dashAddedSpeed: 15
   dashDuration: 0.18
   dashCooldown: 1
   dashInvincibilityDurations: 0.2
   dashParticles: {fileID: 1712887874}
   invincibilityOpacity: 0.05
-  slideAddedSpeed: 8
+  slideAddedSpeed: 12
   slideDuration: 0.4
-  slideDeceleration: 18
+  slideDeceleration: 14
   crouchSize: {x: 1, y: 1}
   crouchOffset: {x: 0, y: -0.5}
   crouchSpeed: 4
@@ -7819,6 +7866,7 @@ MonoBehaviour:
   respawnPoint: {fileID: 2053855568}
   deadBody: {fileID: 7952071552458568786, guid: 7c6970214da729041b8070e62aebf21b, type: 3}
   stepInterval: 0.4
+  immortality: 1
 --- !u!114 &1270734686
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -9248,6 +9296,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::InterractibleObject
   animator: {fileID: 1615324708}
   isTimeMachine: 0
+  trigger: {fileID: 0}
 --- !u!1 &1615779993
 GameObject:
   m_ObjectHideFlags: 0
@@ -9807,11 +9856,12 @@ Transform:
   m_GameObject: {fileID: 1654904982}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -58.71, y: -72.22, z: 0}
+  m_LocalPosition: {x: -60.28, y: -70.85, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1270734680}
+  - {fileID: 2053855568}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1673439337
@@ -15432,6 +15482,11 @@ Transform:
   - {fileID: 1712887872}
   m_Father: {fileID: 1270734680}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1964909412 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2020433042317419868, guid: de44342d4bb78a246a409c55daae48b0, type: 3}
+  m_PrefabInstance: {fileID: 1096372191}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1965858474
 GameObject:
   m_ObjectHideFlags: 0
@@ -15872,17 +15927,22 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2053855567}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -61.01, y: -72.16, z: 0}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 0}
+  m_Father: {fileID: 1654904983}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &2099465071 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 6647897946584643339, guid: de44342d4bb78a246a409c55daae48b0, type: 3}
   m_PrefabInstance: {fileID: 1096372191}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &2110009726 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2067129900481273006, guid: f829d4200b21991449c51ca53a7b1321, type: 3}
+  m_PrefabInstance: {fileID: 193462536}
   m_PrefabAsset: {fileID: 0}
 --- !u!1 &2140484210
 GameObject:
@@ -15971,7 +16031,6 @@ SceneRoots:
   - {fileID: 1654904983}
   - {fileID: 915537871}
   - {fileID: 1627218960}
-  - {fileID: 2053855568}
   - {fileID: 1020183496}
   - {fileID: 3101964}
   - {fileID: 1096372191}

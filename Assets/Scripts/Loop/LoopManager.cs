@@ -19,6 +19,7 @@ public class LoopManager : MonoBehaviour
 
     [Header("UI")]
     [SerializeField] private RectTransform gauge;
+    [SerializeField] private float maxSize = 500;
     [SerializeField] private HorizontalLayoutGroup gaugeContainer;
     [SerializeField] private Image timeRemaining;
     [SerializeField] private Image timeRemovedUI;
@@ -95,7 +96,7 @@ public class LoopManager : MonoBehaviour
 
     public void UpdateTimerUI()
     {
-        float _size = gauge.sizeDelta.x;
+        float _size = maxSize;
         float _spacing = gaugeContainer.spacing;
         RectTransform _rectTransform = timeRemaining.GetComponent<RectTransform>();
 

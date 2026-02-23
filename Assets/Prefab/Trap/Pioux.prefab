@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 111920121262474229}
   - component: {fileID: 3400688127404379594}
   - component: {fileID: 8990718295646161121}
-  m_Layer: 7
+  m_Layer: 6
   m_Name: Pioux
   m_TagString: trap
   m_Icon: {fileID: 0}
@@ -208,6 +208,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Pious_B
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 3c60b0d536bae9a46b2a29db83c895ad, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -285,6 +289,10 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: 4221ca09c62d6ba4e8d3128e724700c0, type: 3}
       propertyPath: m_Name
       value: Pious_A
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 4221ca09c62d6ba4e8d3128e724700c0, type: 3}
+      propertyPath: m_Layer
+      value: 6
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

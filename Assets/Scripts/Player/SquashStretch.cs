@@ -63,7 +63,6 @@ public class SquashStretch : MonoBehaviour
 
     private void Update()
     {
-        Debug.Log($"isGrounded:{IsGrounded} | localScale:{visualTransform.localScale} | targetScale:{targetScale} | landCoroutine:{landCoroutine != null}");
 
         wasGrounded = isGrounded;
         isGrounded = IsGrounded;

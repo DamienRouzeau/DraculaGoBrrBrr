@@ -7,6 +7,8 @@ using UnityEngine.SceneManagement;
 public class PlayerController : MonoBehaviour
 {
     //  INSPECTOR 
+    [Header("Physic")]
+    [SerializeField] private float defaultGravityModifier = 2.5f;
 
     [Header("Movement")]
     [SerializeField] private float moveSpeed = 8f;
@@ -56,6 +58,9 @@ public class PlayerController : MonoBehaviour
     public bool IsDashing => isDashing;
     public bool IsSliding => isSliding;
     public bool IsGrounded => isGrounded;
+
+    [Header("Debug")]
+    [SerializeField] private bool immortality = false;
 
     //  COMPONENTS 
 
@@ -405,7 +410,7 @@ public class PlayerController : MonoBehaviour
     private void EndDash()
     {
         isDashing = false;
-        rb.gravityScale = 1f;
+        rb.gravityScale = defaultGravityModifier;
     }
 
     #endregion
@@ -432,6 +437,8 @@ public class PlayerController : MonoBehaviour
         }
 
         float rate = Mathf.Abs(targetVx) > 0.01f ? acceleration : deceleration;
+        if (isGrounded && !wasGrounded && Mathf.Abs(currentVx) > moveSpeed)
+            rate = deceleration * 0.1f;
         rb.linearVelocity = new Vector2(
             Mathf.MoveTowards(currentVx, targetVx, rate * Time.fixedDeltaTime),
             rb.linearVelocity.y);
@@ -474,6 +481,11 @@ public class PlayerController : MonoBehaviour
     {
         if(collision.collider.CompareTag("trap") && !isInvincible)
         {
+            if(immortality)
+            {
+                Debug.Log("Should die");
+                return;
+            }
             if(!timeMachineIsOn)
             {
                 SceneManager.LoadScene("Menu");
@@ -488,6 +500,11 @@ public class PlayerController : MonoBehaviour
     {
         if (collision.CompareTag("trap") && !isInvincible)
         {
+            if (immortality)
+            {
+                Debug.Log("Should die");
+                return;
+            }
             if (!timeMachineIsOn)
             {
                 SceneManager.LoadScene("Menu");
